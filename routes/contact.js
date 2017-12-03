@@ -15,3 +15,81 @@ var arr = [
     {id: 10, name: 'Brienne', lastname:'Tarth', email:'oathkeeper@gmail.com', phone:'113-456-7890', url:'www.google11.com', notes: 'Do not cross her.'},
     {id: 11, name: 'Petyr', lastname:'Baelish', email:'petyr@baelishindustries.com', phone:'133-456-7890', url:'www.google12.com', notes: 'Do not trust anyone.'},
   ];
+
+  router.get('/',(req,res)=>{
+    if(req.query.id!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].id==req.query.id)
+            {
+                res.json(arr[i])
+            }
+        }
+    }   
+    if(req.query.name!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].name==req.query.name)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else if(req.query.lastname!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].lastname==req.query.lastname)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else if(req.query.email!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].email==req.query.email)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else if(req.query.phone!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].phone==req.query.phone)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else if(req.query.url!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].url==req.query.url)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else if(req.query.notes!=null)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            if(arr[i].notes==req.query.notes)
+            {
+                res.json(arr[i])
+            }
+        }
+    }
+    else
+    {
+        res.json(arr)
+    }
+
+})
