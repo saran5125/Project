@@ -91,5 +91,53 @@ var arr = [
     {
         res.json(arr)
     }
-
+})
+router.get('/:id',(req,res)=>{
+    var id1 = req.params.id
+    for(var i=0;i<arr.length;i++)
+    {
+        if(arr[i].id == id1)
+        {
+            res.json(arr[i])
+            break;
+        }
+    }
+})
+router.put('/:id',(req,res)=>{
+    var id1 = req.params.id
+    for(var i=0;i<arr.length;i++)
+    {
+        if(arr[i].id == id1)
+        {
+            if(arr[i].id!=null)
+            {
+                arr[i].id = req.body.id
+            }
+            if(arr[i].name!=null)
+            {
+                arr[i].name = req.body.name
+            }
+            if(arr[i].lastname!=null)
+            {
+                arr[i].lastname = req.body.lastname
+            }
+            if(arr[i].email!=null)
+            {
+                arr[i].email = req.body.email
+            }
+            if(arr[i].url!=null)
+            {
+                arr[i].url = req.body.url
+            }
+            if(arr[i].phone!=null)
+            {
+                arr[i].phone = req.body.phone
+            }
+            if(arr[i].notes!=null)
+            {
+                arr[i].notes = req.body.notes
+            }
+            break;
+        }
+    }
 })
