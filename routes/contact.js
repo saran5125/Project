@@ -141,3 +141,27 @@ router.put('/:id',(req,res)=>{
         }
     }
 })
+router.post('/',(req,res)=>{
+    var arr1 = {id:req.body.id,
+        name:req.body.name,
+        lastname:req.body.lastname,
+        email:req.body.email,
+        phone:req.body.phone,
+        url:req.body.url,
+        notes:req.body.notes}
+        arr.push(arr1)
+})
+
+router.delete('/:id',(req,res)=>{
+    var id1 = req.params.id
+    for(var i=0;i<arr.length;i++)
+    {
+        if(arr[i].id == id1)
+        {
+            arr.splice(i,1)
+            break;
+        }
+    }
+})
+
+module.exports = router
